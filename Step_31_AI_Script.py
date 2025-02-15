@@ -1,5 +1,5 @@
 import time
-import subprocess
+import os
 
 def main():
     print("Executing Step 31 AI Task... 🚀")
@@ -12,9 +12,9 @@ def main():
     # Wait for 10 minutes before restarting
     time.sleep(600)  # 600 seconds = 10 minutes
 
-    # Restart the process by executing Step 1 again
+    # Restart the whole sequence by executing the main script
     print("Restarting the sequence now...")
-    subprocess.run(["python", "Step_1_AI_Script.py"])
+    os.system("python Step_1_AI_Script.py")
 
 if __name__ == "__main__":
     main()
