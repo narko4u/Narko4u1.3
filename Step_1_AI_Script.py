@@ -1,13 +1,20 @@
 import time
+import os
 
 print("AI System Starting... 🚀")
 
+steps = 31  # Total number of steps
+
 while True:
-    print("Executing Step 1... AI is Running 🚀")
-    
-    # Perform a dummy background task to keep Railway active
-    with open("keep_alive.txt", "w") as f:
-        f.write("AI is still active...\n")
-    
-    time.sleep(600)  # Runs every 10 minutes
+    for i in range(1, steps + 1):
+        script_name = f"Step_{i}_AI_Script.py"
+        if os.path.exists(script_name):
+            print(f"Executing {script_name}... 🚀")
+            os.system(f"python {script_name}")  # Runs each step
+        else:
+            print(f"Skipping {script_name} (not found).")
+
+    print("All steps executed. Restarting sequence in 10 minutes... 🔄")
+    time.sleep(600)  # Wait 10 minutes before running all steps again
+
 
