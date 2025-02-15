@@ -1,0 +1,5 @@
+instagrapi
+moviepy
+tweepy
+openai
+requests
